@@ -13,5 +13,11 @@ internal interface IBicycle
 
     void Paint(BikeColor color);
 
+    // Prepare for sale
+    void CleanFrame();
+    void AirTires();
+    void TestRide();
+
+
 
 } // End Interfacce

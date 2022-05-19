@@ -2,7 +2,37 @@
 
 // TestingModel();
 // TestSerialGenerator();
-TestBIkeOptions();
+// TestBIkeOptions();
+// TestReceipt();
+OrderBike();
+
+void OrderBike()
+{
+    SampleOrder order = new SampleOrder();
+    order.WelsomeMessage();
+}
+
+
+
+
+void TestReceipt()
+{
+    Vintage bike = new Vintage(new NormalWheel());
+    SerialNumberGenerator generator = SerialNumberGenerator.Instance;
+    generator.SetModelAndStart(bike.Model, bike.StartNumber);
+    bike.SerialNumber = generator.GetNextSerial();
+    List<IBicycle> bicycles = new List<IBicycle>();
+    List<IBikeOption> bikeOptions = new List<IBikeOption>();
+    bikeOptions.Add(new LeatherGrips());
+    bicycles.Add(bike);
+    SampleReceipt receipt = new SampleReceipt(bicycles, bikeOptions);
+
+}
+
+
+
+
+
 
 // Testing Bike Options
 void TestBIkeOptions()
